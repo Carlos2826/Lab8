@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Lista de productos</title>
+		<script src="https://cdn.tailwindcss.com"></script>
+	</head>
+	<body class="font-mono" onload="cargarProductos()">
+		<h1 class="text-3xl font-bold uppercase ml-6">Lista de Productos</h1>
+		<section class="">
+			<form action="" class="flex justify-center p-4">
+			  <section class="columns-2 grid grid-cols-2 gap-4 font-medium text-gray-500">
+				<section style="margin-bottom: 20px;">
+				  <label for="nombre" class="font-medium text-gray-500">Ingrese el nombre</label>
+				  <br />
+				  <input type="text" id="nombre" class="border border-gray-600 rounded-md w-full px-20 py-2" />
+				  <input type="hidden" name="productoId" id="productoId" />
+				</section>
+				<section style="margin-bottom: 20px;">
+				  <label for="precio">Ingrese el precio</label>
+				  <br />
+				  <input type="number" id="precio" class="border border-gray-600 rounded-md w-full px-20 py-2" />
+				</section>
+				<section style="margin-bottom: 20px;">
+				  <label for="categoriaId">Categoria ID</label>
+				  <br />
+				  <input type="number" id="categoriaId" class="border border-gray-600 rounded-md w-full px-20 py-2" />
+				</section>
+				<section style="margin-bottom: 20px;">
+				  <label for="foto">Ingrese el URL de la foto</label>
+				  <br />
+				  <input type="url" id="foto" class="border border-gray-600 rounded-md w-full px-20 py-2" />
+				</section>
+				<section style="margin-bottom: 20px;">
+				  <label for="fecha_preparacion">Ingrese la fecha de preparacion</label>
+				  <br />
+				  <input type="date" id="fecha_preparacion" class="border border-gray-600 rounded-md w-full px-20 py-2" />
+				</section>
+				<section style="margin-bottom: 20px;">
+				  <label for="fecha_expiracion">Ingrese la fecha de expiracion</label>
+				  <br />
+				  <input type="date" id="fecha_expiracion" class="border border-gray-600 rounded-md w-full px-20 py-2" />
+				</section>					
+				<section class="col-span-2">
+						<button
+							onclick="GuardarProducto()"
+							class="w-full bg-green-500 hover:bg-green-700 text-white p-2 rounded-md">
+							Procesar
+						</button>
+				</section>
+				<section class="col-span-2">
+						<button
+							onclick="ActualizarProducto()"
+							class="w-full bg-green-500 hover:bg-green-700 text-white p-2 rounded-md">
+							Actualizar
+						</button>
+				</section>
+				</section>
+			</form>
+
+			<table class="m-6">
+				<thead>
+					<tr>
+						<th
+							class="w-1/4 border px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase"
+						>
+							Acción
+						</th>
+						<th
+							class="w-1/4 border px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase"
+						>
+							ID Producto
+						</th>
+						<th
+							class="w-1/4 border px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase"
+						>
+							Nombre
+						</th>
+						<th
+							class="w-1/4 border px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase"
+						>
+							Precio
+						</th>
+						<th
+							class="w-1/4 border px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase"
+						>
+							Categoria
+						</th>
+						<th
+							class="w-1/4 border px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase"
+						>
+							Foto
+						</th>
+						<th
+							class="w-1/4 border px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase"
+						>
+							Fecha Preparación
+						</th>
+						<th
+							class="w-1/4 border px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase"
+						>
+							Fecha Expiración
+						</th>
+					</tr>
+				</thead>
+				<tbody id="product-table-body">
+				</tbody>
+			</table>
+		</section>
+		<script src="index.js"></script>
+	</body>
+</html>
